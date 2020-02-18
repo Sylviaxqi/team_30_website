@@ -42,7 +42,7 @@ let result = await queryDatabase( "select * from userInformation FOR JSON PATH",
     }
   })
   console.log("result: ", result);
-  res.json({message: result});
+  res.send({message: result});
 
   // res.send({message: 'get method users'});
 });
