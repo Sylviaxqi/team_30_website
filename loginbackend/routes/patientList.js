@@ -43,13 +43,11 @@ let result = await queryDatabase( "select * from userInformation FOR JSON PATH",
   })
   console.log("result: ", result);
   res.send({message: result});
-
-  // res.send({message: 'get method users'});
 });
 
 
 router.post('/', async function(req, res, next) {    
-  let result = await queryDatabase( "select * from userInformation",//"INSERT questionnaire (HospitalNo, size, vocalChordMobile, comments) VALUES ('" + HospitalNo + "', '" + tumourSize + "', '" + VocalChordMobile + "', '" + Comments + "')", 
+  let result = await queryDatabase( "select * from userInformation order by name",
   (err, row, field) => {
     console.log('connected');
   })
